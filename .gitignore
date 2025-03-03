@@ -1,0 +1,7 @@
+# 忽略 paper 文件夹下的除了 .tex 文件的所有
+# ./paper/(!*.tex)
+
+paper/*
+
+# 只关注文件夹下的 .tex 文件
+!paper/*.tex
