@@ -41,30 +41,33 @@
   \vspace{24pt} % 段前 24 磅
 }
 
-% 设置目录中章节标题的格式
-\titlecontents{section}
-  [0em] % 左边距
-  {\bfseries \songti \fontsize{11pt}{13pt}\selectfont} % 标题格式
-  {\contentslabel{0.9em}{、}} % 标签格式（序号和顿号）
-  {}
-  {\titlerule*{.}\contentspage}
+% % 设置目录中章节标题的格式
+% \titlecontents{section}
+%   [0em] % 左边距
+%   {\bfseries \songti \fontsize{11pt}{13pt}\selectfont} % 标题格式
+%   {\contentslabel{0.9em}{、}} % 标签格式（序号和顿号）
+%   {}
+%   {\titlerule*{.}\contentspage}
 
-% 设置目录中二级标题格式
-\titleformat{\subsection}
-  {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
-  {\thesubsection} % 编号
-  {0em} % 编号与标题之间的水平间距
-  {} % 标题内容前的附加内容
-  [\vspace{0pt}] % 段后 0 磅
+% % 设置目录中二级标题格式
+% \titleformat{\subsection}
+%   {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
+%   {\thesubsection} % 编号
+%   {0em} % 编号与标题之间的水平间距
+%   {} % 标题内容前的附加内容
+%   [\vspace{0pt}] % 段后 0 磅
 
-% 设置目录中三级标题格式
-\titleformat{\subsubsection}
-  {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
-  {\thesubsubsection} % 编号
-  {0em} % 编号与标题之间的水平间距
-  {} % 标题内容前的附加内容
-  [\vspace{0pt}] % 段后  0 磅
+% % 设置目录中三级标题格式
+% \titleformat{\subsubsection}
+%   {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
+%   {\thesubsubsection} % 编号
+%   {0em} % 编号与标题之间的水平间距
+%   {} % 标题内容前的附加内容
+%   [\vspace{0pt}] % 段后  0 磅
 
+
+  \CTEXsetup[name={第,章},number={{\arabic{section}}}]{section}
+  \sectionfont{\centering} % 居中显示标题
 
 % 使用 titlesec 设置章节与标题的分隔符
 \titleformat{\section}
@@ -94,7 +97,7 @@
 
 % \CTEXsetup[name={\heiti \fontsize{14.4pt}{21pt}\selectfont},number={}]{section}
 
-\CTEXsetup[format={\Large\bfseries}]{section}
+% \CTEXsetup[format={\Large\bfseries}]{section}
 
 \setlength{\baselineskip}{20pt}  % 正文20磅行距
 
@@ -142,13 +145,16 @@
 % \renewcommand*{\Authand}{,}
 % \renewcommand*{\Authands}{,}
 
-\geometry{paperwidth=19.69cm, paperheight=27.31cm,left=2.5cm,right=2.5cm,top=2.8cm, bottom=2.5cm}
+\geometry{paperwidth=21cm, paperheight=29.7cm,left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}
 
 % 设置中文字体为宋体
 \setCJKmainfont{SimSun}
 
 % 设置英文字体为 Times New Roman
 \setmainfont{Times New Roman}
+% 引入华文行楷字体
+\setCJKfamilyfont{huawenxingkai}{STXingkai} % 字体名称可能与系统显示不同，需确认
+\newcommand{\huawenxingkai}{\CJKfamily{huawenxingkai}}
 
 % 设置段落格式
 \setlength{\parindent}{2em} % 首行缩进 2 字符
@@ -169,13 +175,55 @@
 \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
 \setlist[enumerate]{itemsep=0pt, parsep=0pt} % 设置enumerate环境的垂直间距
 
-\makeatother
+\makeatletter 
 {
     \thispagestyle{empty}
     \begin{center}
-        \includegraphics[width=9.25cm, height=2.42cm]{../images/school.png}\\
-        \vspace*{1.75\baselineskip}
-        {\fontsize{22pt}{22pt}\selectfont \textbf{\lishu 硕士学位论文开题报告}}\\
+        \includegraphics[height=2.07cm, width=10.03cm]{../images/school.png}
+        \vspace*{1\baselineskip}\\
+        {\fontsize{36}{43.2}\selectfont{\huawenxingkai 硕\ 士\ 学\ 位\ 论\ 文}}\\
+        \vspace*{4.6\baselineskip}
+        {\fontsize{24}{28.8}\selectfont\heiti 题\ \ \ 目}
+        \vspace*{1\baselineskip}\\
+        {\fontsize{24}{28.8} \underline{\heiti{基于图像分割的细粒度变形表格结构识别}}}
+    \end{center}
+    \vspace*{3\baselineskip}
+    \begin{center}
+    \begin{table}[!htbp]
+    \centering
+        \begin{tabular}{c @{\hspace{2cm}} c rc}
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学号:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2304081200008}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 硕士研究生:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{刘龙}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 指导教师:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{杨词慧副教授}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学院:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{信息工程学院}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 专业:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机科学与技术}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 研究方向:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机视觉}}} \\
+            \\[1pt]
+            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 日期:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2024年12月}}}
+        \end{tabular}
+    \end{table} 
+    \end{center}
+
+\begin{center}
+    \vspace*{\baselineskip}
+    {\Large \fangsong 南昌航空大学研究生院制}
+\end{center}
+% \vspace{-2\baselineskip} % 减少一定的空间
+\restoregeometry
+}
+
+{
+    \thispagestyle{empty}
+    \begin{center}
+        \includegraphics[height=2.07cm, width=10.03cm]{../images/school.png}
+        \vspace*{1\baselineskip}
+        \newline
+        {\fontsize{36}{43.2}\selectfont{\huawenxingkai 硕\ 士\ 学\ 位\ 论\ 文}}\\
         \vspace*{4.6\baselineskip}
         {\fontsize{21pt}{21pt} \textbf{\songti{基于图像分割的细粒度变形表格结构识别}}}
     \end{center}
@@ -208,6 +256,8 @@
 % \vspace{-2\baselineskip} % 减少一定的空间
 \restoregeometry
 }
+
+\makeatother
 
 \pagestyle{fancy} % 从这个地方一下全遵循自定义页眉
 \newpage
@@ -712,6 +762,38 @@ $$
     % \bibitem{b10} Jiali Y . Application of improved BP neural network model in bank financial accounting[J]. Intelligent Systems with Applications,2022,16.
 \end{thebibliography}
 \endgroup
+
+
+{
+    
+\newpage
+\newgeometry{left=3.18cm,right=3.18cm,top=2.54cm, bottom=2.54cm}
+\thispagestyle{empty}
+\begin{center}
+     {\huge 学位论文原创性声明}
+\end{center}
+
+\vspace*{3\baselineskip}
+
+\begin{spacing}{2}
+\zihao{4}
+郑重声明:所呈交的学位论文《基于YOLOv7和目标跟踪的人流量检测系统》,是本
+人在导师的指导下,独立进行研究取得的成果。除文中已经注明引用
+的内容外,本论文不包含其他个人或集体已经发表或撰写过的作品、
+研究成果。对本文的研究做出贡献的个人和集体,均已在文中以明确
+方式标明。本人完全意识到本声明的法律后果,并承诺因本声明而产
+生的的法律结果由本人承担。
+\end{spacing}
+
+\vspace*{5\baselineskip}
+
+\zihao{4} 学位论文作者：罗小龙
+
+\vspace*{2\baselineskip}
+
+\zihao{4} 日期：2023 年 5 月 19 日
+
+}
 % \end{sloppypar}
 \end{document}
 
