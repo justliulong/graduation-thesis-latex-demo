@@ -101,6 +101,11 @@
 
 \setlength{\baselineskip}{20pt}  % 正文20磅行距
 
+\newcommand{\wideword}[1]{%
+  \sodef\spaced{}{0.07cm}{0.07cm}{0.07cm}%
+  \spaced{#1}%
+}
+
 \usepackage{listings} % 配置附件代码块
 \usepackage{setspace}
 \usepackage{ragged2e} % 设置两端对齐需要的模块
@@ -177,55 +182,64 @@
 
 \makeatletter 
 {
-    \thispagestyle{empty}
+    \thispagestyle{empty}\
+    \vspace{10.5pt}\\
+    \noindent{
+        \zihao{5}{\heiti 中图分类号:TP391}
+    }\\
+    \noindent{
+        \zihao{5}{\heiti 盲审编号：10406\_081203\_2004081200109\_LW}
+    }
+    \vspace{42pt}
     \begin{center}
         \includegraphics[height=2.07cm, width=10.03cm]{../images/school.png}
         \vspace*{1\baselineskip}\\
         {\fontsize{36}{43.2}\selectfont{\huawenxingkai 硕\ 士\ 学\ 位\ 论\ 文}}\\
         \vspace*{4.6\baselineskip}
         {\fontsize{24}{28.8}\selectfont\heiti 题\ \ \ 目}
-        \vspace*{1\baselineskip}\\
+        \vspace{33.6pt}\\
         {\fontsize{24}{28.8} \underline{\heiti{基于图像分割的细粒度变形表格结构识别}}}
     \end{center}
-    \vspace*{3\baselineskip}
+    \vspace{33.6pt}
     \begin{center}
     \begin{table}[!htbp]
     \centering
-        \begin{tabular}{c @{\hspace{2cm}} c rc}
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学号:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2304081200008}}} \\
+        \begin{tabular}{c @{\hspace{1cm}} c rc}
+            \Large \makebox[3cm][s]{\zihao{4}\selectfont{\heiti 学科、专业}}&{\makebox[7cm][c]{\zihao{4}\selectfont{\heiti 计算机科学技术}}} \\
+            \cline{2-2} % 仅第二列下方显示横线
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 硕士研究生:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{刘龙}}} \\
+            \Large \makebox[3cm][s]{\zihao{4}\selectfont{\heiti 专业代码}}&{\makebox[7cm][c]{\zihao{4}\selectfont{\heiti xxxxxx}}} \\
+            \cline{2-2} % 仅第二列下方显示横线
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 指导教师:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{杨词慧副教授}}} \\
+            \Large \makebox[3cm][s]{\zihao{4}\selectfont{\heiti 学位类型}}&{\makebox[7cm][c]{\zihao{4}\selectfont{\heiti 学术学位硕士}}} \\
+            \cline{2-2} % 仅第二列下方显示横线
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学院:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{信息工程学院}}} \\
-            \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 专业:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机科学与技术}}} \\
-            \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 研究方向:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机视觉}}} \\
-            \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 日期:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2024年12月}}}
         \end{tabular}
     \end{table} 
     \end{center}
 
-\begin{center}
-    \vspace*{\baselineskip}
-    {\Large \fangsong 南昌航空大学研究生院制}
-\end{center}
+% \begin{center}
+%     \vspace*{\baselineskip}
+%     {\zihao{4} \heiti 2026年5月}
+% \end{center}
 % \vspace{-2\baselineskip} % 减少一定的空间
 \restoregeometry
 }
 
 {
     \thispagestyle{empty}
+    \vspace{10.5pt}
+    \noindent{
+        \zihao{5}{\heiti 中图分类号:TP391}
+    }\\
+    \noindent{
+        \zihao{5}{\heiti 盲审编号：10406\_081203\_2004081200109\_LW}
+    }
+    \vspace{50pt}\\
     \begin{center}
-        \includegraphics[height=2.07cm, width=10.03cm]{../images/school.png}
-        \vspace*{1\baselineskip}
-        \newline
-        {\fontsize{36}{43.2}\selectfont{\huawenxingkai 硕\ 士\ 学\ 位\ 论\ 文}}\\
-        \vspace*{4.6\baselineskip}
-        {\fontsize{21pt}{21pt} \textbf{\songti{基于图像分割的细粒度变形表格结构识别}}}
+        {\zihao{3}\selectfont\textbf{南昌航空大学}}\\
+        {\zihao{3}\selectfont\textbf{硕\ 士\ 学\ 位\ 论\ 文}}\\
+        {\zihao{3}\selectfont\textbf{硕\ 士\ 学\ 位\ 论\ 文}}\\
     \end{center}
     \vspace*{3\baselineskip}
     \begin{center}
@@ -390,123 +404,6 @@
 
 \section{研究方案}
 \subsection{数据集的构建}
-
-现有的形变表格数据集都是基于关键点检测或者目标识别算法，所以金标准将会不符合图像分割的需求，所以我们将采集一些形变的数据集进行，其中将会有1000张左右来自人工采集，4000张来自自然场景下的公开数据集WTW,一共5000张，然后通过人工标注，将标注结果转换为图像分割的标注格式，并使用这些数据集进行训练和测试。如图\ref{fig:label}是数据标注的掩码效果图：
-\begin{figure}[H]
-    \centering
-    % 第一个子图
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/origin.png}
-        \caption{原图}
-        \label{fig:origin}
-    \end{subfigure}
-    \hfill
-    % 第二个子图
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/mask.png}
-        \caption{掩码图像}
-        \label{fig:mask}
-    \end{subfigure}
-    \caption{掩码标注效果}
-    \label{fig:label}
-\end{figure}
-
-\subsection{基于卷积的局部特征信息提取}
-
-LDConv（Linear Deformable Convolution，线性可形变卷积）是一种在传统卷积操作基础上进行改进的卷积方式。与传统卷积不同，LDConv 引入了可变形卷积的思想，并通过线性建模的方式计算偏移量，以此来提高卷积神经网络（CNN）对复杂输入特征的适应性和灵活性。
-
-在 LDConv 中，首先通过一个线性变换网络（如卷积层或全连接层）计算每个局部区域的偏移量。这些偏移量指示了卷积核每个采样点应该偏移的方向和距离。例如，对于某一采样点位置 \( (i, j) \)，LDConv 会通过线性变换生成对应的偏移量 \( \Delta x_{i,j} \) 和 \( \Delta y_{i,j} \)，从而调整该采样点的位置。这一过程可以用如下公式表示：  
-
-\[
-\Delta x_{i,j}, \Delta y_{i,j} = \mathcal{F}_{\text{linear}}(X_{i,j})
-\]
-其中，\( \mathcal{F}_{\text{linear}} \) 是由卷积层或全连接层定义的线性变换操作，旨在根据输入特征图 \( X \) 计算出每个采样点的偏移量。
-
-在计算输出特征图时，LDConv 根据偏移量 \( \Delta x_{i,j} \) 和 \( \Delta y_{i,j} \) 调整卷积核的采样点，这里的采样点采用非均匀采样模式，进一步增强了灵活性，不同的偏移量生成函数为每个采样点定义了不同的采样模式，使得卷积核能够根据输入图像的局部特征在更灵活的网格上进行采样。如下所示：  
-
-\[
-Y_{i,j} = \sum_{k=1}^{K} K_{i, j} \cdot X_{i + \Delta x_{i,j}, j + \Delta y_{i,j}}
-\]
-其中，\( Y_{i,j} \) 表示输出特征图的坐标为（i,j）的像素值，\( K_{i, j} \) 是卷积核的权重，\( X_{i + \Delta x, j + \Delta y} \) 是调整后的输入特征图采样点。通过这种方式，LDConv 可以根据输入图像的内容动态地调整卷积核的采样点，从而使得网络能够在局部区域内捕捉到更加细致和精准的特征。
-
-\subsection{基于状态空间模型SSM的全局信息提取}
-
-状态空间模型（State Space Model, SSM）是描述系统动态的数学模型，通常用于建模动态系统的状态演化。在深度学习中，SSM被广泛应用于时序数据建模和序列预测任务。其基本思想是通过一组隐状态（latent states）来描述系统的演变过程，这些隐状态依赖于当前的观察值（observation）以及上一时刻的状态。最近横空出世的Mamba模型正是使用状态空间模型来达到与大名鼎鼎的Transformer模型相似的效果，最近有学者效仿Vision Transformer（ViT）的思路，将SSM应用于图像处理任务，提出了基于SSM的图像分割模型，并命名为Vision Mamba（ViM），为了将1d的序列模型应用在2d的图像上，提出了核心模块SS2D（2D-Selective Scan，2D选择性扫描），工作原理如图\ref{fig:ss2d}所示，最后序列合并可以通过爱因斯坦求和表达式来快速还原。
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{../images/ss2d.png}
-    \caption{SS2D模块}
-    \label{fig:ss2d}
-\end{figure}
-
-其中，S6模块是Mamba架构中的一个复杂组件，负责通过一系列线性变换和离散化过程处理输入序列，具体操作如图\ref{fig:S6}。
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{../images/S6.png}
-    \caption{S6模块}
-    \label{fig:S6}
-\end{figure}
-
-图中输入序列$X=[x_{1}, x_{2}, ..., x_{L}]$中每个$x_{i}$的维度是D,对于2d选择性扫描得到的每个图像块，D是通过embedding方法嵌入得到，大小为$ H_{i} \times W_{i} \times C$，其中$H_{i}$和$W_{i}$是第i图像块的高度和宽度,而C是图像的通道数，所以输入的$X \in \mathcal{R}^{B \times L \times D}$，其中B是batch size，L是序列长度，D是嵌入后的维度。
-
-通过线性投影层，使将来可学习的$B,C,\Delta$矩阵参数与输入序列建立联系：
-$$
-B = \text{Linear}(X) \in \mathcal{R}^{B \times L \times D}
-$$
-$$
-C = \text{Linear}(X) \in \mathcal{R}^{B \times L \times D}
-$$
-$$
-\Delta = \text{Linear}(X) \in \mathcal{R}^{B \times L \times D}
-$$
-
-此外，状态空间模型本身是通过微分方程构建，是描述连续序列的变化，为了使将连续时间动力学系统离散化，S6模块基于零阶保持（Zero-Order Hold, ZOH）假设以及李指数空间映射，将可学习参数A,B进行映射：
-$$
-\bar{A} = e^{\Delta A}
-$$
-$$
-\bar{B} = (\Delta A)^{-1} (e^{\Delta A} - I) \Delta B
-$$
-最后利用离散化的状态更新公式计算输出序列$Y=[y_1, y_2, ...,y_t ..., y_L] \in \mathcal{R}^{B \times L \times D}$：
-$$
-h_t = \bar{A} h_{t-1} + \bar{B} x_t
-$$
-$$
-y_t = C h_{t} + D x_t
-$$
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{../images/MoSS2D.png}
-    \caption{S6模块}
-    \label{fig:MoSSD}
-\end{figure}
-
-为增强这种基于具有方向敏感性的选择性扫描得到的全局特征，拟使用一个多阶的SS2D模块(Multi-order SS2D, MoSS2D)，通过改变内部的级联层数控制模块阶数，具体原理如图\ref{fig:MoSSD}，输入图像 $I \in \mathcal{R}^{HW \times C}$，通过投影层将通道数扩大两倍，根据通道将图像分成两份一个通过卷积层提取信息，一份通过卷积保留局部特征，一份进入通过n个微级联的SS2D模块，最后将所有特征图进行拼接，得到输出特征图通过投影将通道数恢复为$C$。
-
-\subsection{局部信息与全局信息双路融合骨干}
-
-本课题基于YOLOv11设计了一种双路融合骨干网络，能充分结合局部信息和全局信息的特征提取，网络结构如图\ref{fig:backbone}所示。该网络由两条不同的分支组成，用于提取不同层次的信息。左侧分支负责提取局部信息，主要通过线性可变形卷积来实现特征提取；右侧分支则专注于全局信息的提取，核心采用SS2D模块进行特征提取。最终，两个分支提取的特征会被叠加，形成一个具有三层不同尺度特征图的特征金字塔。通过构建这一特征金字塔，可以实现多尺度特征的融合与表达，从而提高模型在目标检测、语义分割等任务中的性能与鲁棒性，并增强其对不同分辨率目标的适应能力。
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{../images/model.png}
-    \caption{双路融合骨干网络}
-    \label{fig:backbone}
-\end{figure}
-
-\subsection{多尺度特征融合}
-
-骨干网络提取了三个不同尺度的特征图，在融合过程中，模型通过多次上采样和下采样，充分融合不同尺度的特征图，此外，模型的检测头与常规的单阶段实例分割模型yolov11结构相同。通过在三个不同尺度的特征图上进行检测，模型能够在大尺度特征图上检测小目标，并在小尺度特征图上检测大目标。具体的特征融合过程如图\ref{fig:neck}所示。
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{../images/neck.png}
-    \caption{多尺度特征融合}
-    \label{fig:neck}
-\end{figure}
 \subsection{单元格逻辑坐标定位}
 
 单元格逻辑坐标的定位是表格结构识别中的关键步骤之一。其基本思路是通过分析相邻关系，识别所有属于同一行或同一列的单元格，并将这些单元格归入相应的集合中。对于非跨行单元格，它只能出现在一个行集合中；而对于跨行单元格，则可以出现在多个行集合中，以表示该单元格跨越的行范围。列集合同理。为了解决判断相邻关系这一关键问题，本文提出了两个概念：最短基准投影重叠率和质心扩展矩形。
@@ -582,80 +479,9 @@ $$
 
 \subsubsection{基于分治思路的单元格行列划分}
 
-按照之前的基本思路，需要定位属于同一行或同一列的单元格，并将其归为同一集合。然而，由于变形单元格的排列存在一定复杂性，在水平或垂直方向上并未严格对齐，因此需要通过不断搜索相邻单元格来识别属于同一行或同一列的单元格。为了解决这一问题，本文设计了一种基于分治的单元格逻辑坐标回归算法。以定位同一行的单元格集合为例（同理适用于同一列的定位），具体步骤如下：
-
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 逐个遍历单元格：将当前单元格作为基准，利用最短基准投影重叠率和左右水平距离，进行左右方向的相邻单元格搜索。
-    \item 分解：每次找到相邻单元格后，以该单元格为基准，重复相同的搜索过程，直到达到边界或没有相邻单元格为止。
-    \item 合并：将左右方向的搜索结果合并，得到属于同一行的单元格集合。
-\end{enumerate}
-
-通过以上步骤，便可定位所有属于同一行或同一列的单元格集合。具体的行定位流程如图\ref{fig:local}(\subref{fig:local-row})所示，列定位流程如图\ref{fig:local}(\subref{fig:local-col})所示。完成所有单元格的逻辑定位后，结合其物理坐标，可绘制出逻辑结构相同的同构表格框架图（见图\ref{fig:local-re}）。
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/row.png}
-        \caption{行定位}
-        \label{fig:local-row}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/col.png}
-        \caption{列定位}
-        \label{fig:local-col}
-    \end{subfigure}
-    \caption{行列定位图}
-    \label{fig:local}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/vmask.png}
-        \caption{原图以及掩码可视化}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{../images/local-re.jpg}
-        \caption{同构表格框架图}
-    \end{subfigure}
-    \caption{同构表格}
-    \label{fig:local-re}
-\end{figure}
-
 \section{拟解决的关键问题与创新点}
-\subsection{拟解决的关键问题}
-
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 对表格图像提取其局部性特征和全局性特征，并将局部语义信息和全局空间依赖信息结合，以此来提高网络模型分割性能，得到一个准确的单元格分割结果。
-    \item 单元格逻辑坐标定位，为后续表格结构识别提供基础，并提高表格结构识别的准确率。
-\end{enumerate}
-\subsection{课题的创新点}
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 基于实例分割模型，提出一种能有效分割密集且尺度不一的单元格分割算法。
-    \item 根据几何学理论，为单元格逻辑定位提供了一种稳健的思路，更够有效地获取单元格的行、列以及跨行跨列的信息。
-    \item 构建实例分割单元格的数据集，为模型训练提供基础，并为当前研究方向提供更加丰富的数据支持。
-\end{enumerate}
 
 \section{研究计划进度}
-\noindent % 取消缩进
-\textbf{第一阶段: 2024年9月 -- 2024年12月}
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 选定论文的方向，查询相关文献；
-    \item 编写开题报告，介绍所要研究的具体方向和后续的安排。
-\end{enumerate}
-\textbf{第二阶段：2025年1月 -- 2025年3月}
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 完成总体方案、设计原理和思路设计；
-    \item 完成数据集采集，初步完成数据集标注，构建算法，对图像进行训练，观察训练结果。
-\end{enumerate}
-\textbf{第三阶段：2025年4月 -- 2025年6月}
-\begin{enumerate}[label=(\arabic*), leftmargin=40pt]
-    \item 对真实文档图像样本进行标注，生成仿真文档图像样本；
-    \item 改进初步构建的算法，优化算法结构，提高训练效率、准确率。
-\end{enumerate}
 
 % 参考文献部分
 \section{参考文献}
@@ -767,31 +593,43 @@ $$
 {
     
 \newpage
-\newgeometry{left=3.18cm,right=3.18cm,top=2.54cm, bottom=2.54cm}
 \thispagestyle{empty}
+\newgeometry{paperwidth=21cm, paperheight=29.7cm, left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}
+\thispagestyle{empty}
+
 \begin{center}
-     {\huge 学位论文原创性声明}
+    \vspace{21.6pt}
+     {\fontsize{18}{21.6}\selectfont\heiti  南昌航空大学硕士学位论文原创性声明}
 \end{center}
-
-\vspace*{3\baselineskip}
-
-\begin{spacing}{2}
+\vspace{12.6pt}
+\begin{spacing}{1.9}
 \zihao{4}
-郑重声明:所呈交的学位论文《基于YOLOv7和目标跟踪的人流量检测系统》,是本
-人在导师的指导下,独立进行研究取得的成果。除文中已经注明引用
-的内容外,本论文不包含其他个人或集体已经发表或撰写过的作品、
-研究成果。对本文的研究做出贡献的个人和集体,均已在文中以明确
-方式标明。本人完全意识到本声明的法律后果,并承诺因本声明而产
-生的的法律结果由本人承担。
+本人郑重声明：所呈交的硕士学位论文，是我个人在导师指导下，在南昌航空大学攻读硕士学位期间独立进行研究工作所取得的成果。尽我所知，论文中除已注明部分外不包含他人已发表或撰写过的研究成果。对本文的研究工作做出重要贡献的个人和集体，均已在文中作了明确地说明并表示了谢意。本声明的法律结果将完全由本人承担。
 \end{spacing}
 
-\vspace*{5\baselineskip}
+\vspace{16.8pt}
+{\zihao{4} 签名：\underline{\hspace{5cm}} \hspace{1cm} 日期：\underline{\hspace{5cm}}}
 
-\zihao{4} 学位论文作者：罗小龙
+\vspace{34.2pt}
 
-\vspace*{2\baselineskip}
+\begin{center}
+    {\fontsize{18}{21.6}\selectfont\heiti  南昌航空大学硕士学位论文使用授权书}
+\end{center}
+\vspace{16.8pt}
+\begin{spacing}{1.9}
+\zihao{4}
+本论文的研究成果归南昌航空大学所有，本论文的研究内容不得
+以其它单位的名义发表。本人完全了解南昌航空大学关于保存、使用
+学位论文的规定，同意学校保留并向有关部门送交论文的复印件和电
+子版本，允许论文被查阅和借阅。本人授权南昌航空大学，可以采用
+影印、缩印或其他复制手段保存论文，可以公布论文的全部或部分内容。同时授权中国科学技术信息研究所将本学位论文收录到《中国学位论文全文数据库》，并通过网络向社会公众提供信息服务。
+\end{spacing}
 
-\zihao{4} 日期：2023 年 5 月 19 日
+{\zihao{4}（保密的学位论文在解密后适用本授权书）}
+
+\vspace{16.8pt}
+{\zihao{4} \noindent
+签名：\underline{\hspace{3cm}} 导师签名：\underline{\hspace{3cm}} 日期：\underline{\hspace{3cm}}}
 
 }
 % \end{sloppypar}
