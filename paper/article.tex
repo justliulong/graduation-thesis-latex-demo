@@ -70,12 +70,14 @@
   \sectionfont{\centering} % 居中显示标题
 
 % 使用 titlesec 设置章节与标题的分隔符
-\titleformat{\section}
-  {\bfseries \heiti \fontsize{14pt}{21pt}\selectfont} % 字体设置
-  {\thesection} % 编号
-  {0em} % 编号与标题之间的水平间距
-  {、} % 标题内容前的附加内容
-  [\vspace{0.5em}] % 标题后的垂直间距
+% 自定义带编号章节格式：第x章 标题（居中）
+\titleformat{\section}[block]{\centering\bfseries\large}{第\arabic{section}章\quad}{0pt}{}
+
+% 自定义无编号章节格式（摘要/参考文献/致谢）
+\titleformat{name=\section,numberless}[block]{\centering\bfseries\large}{}{0pt}{}
+
+% 禁用默认标题
+\renewcommand{\refname}
 
 % 设置 subsection 格式
 \titleformat{\subsection}
@@ -183,7 +185,7 @@
 \makeatletter 
 {
     \thispagestyle{empty}\
-    \vspace{10.5pt}\\
+    \vspace*{10.5pt}\\
     \noindent{
         \zihao{5}{\heiti 中图分类号:TP391}
     }\\
@@ -218,57 +220,124 @@
     \end{table} 
     \end{center}
 
-% \begin{center}
-%     \vspace*{\baselineskip}
-%     {\zihao{4} \heiti 2026年5月}
-% \end{center}
-% \vspace{-2\baselineskip} % 减少一定的空间
-\restoregeometry
-}
 
-{
-    \thispagestyle{empty}
-    \vspace{10.5pt}
+    \newpage    
+    \thispagestyle{empty}\
+    \vspace*{7pt}\\
+    {\zihao{5}{\songti \raggedleft 学校代码：10001 \par}}
     \noindent{
-        \zihao{5}{\heiti 中图分类号:TP391}
-    }\\
-    \noindent{
-        \zihao{5}{\heiti 盲审编号：10406\_081203\_2004081200109\_LW}
+        \zihao{5}{\songti 分类号:TP391 \hfill 学号：2004081200109 \par}
     }
-    \vspace{50pt}\\
+    \vspace{50pt}
     \begin{center}
-        {\zihao{3}\selectfont\textbf{南昌航空大学}}\\
-        {\zihao{3}\selectfont\textbf{硕\ 士\ 学\ 位\ 论\ 文}}\\
-        {\zihao{3}\selectfont\textbf{硕\ 士\ 学\ 位\ 论\ 文}}\\
+        {\zihao{3}\selectfont\songti \textbf{南昌航空大学}}\\
+        \vspace{3pt}
+        {\zihao{3}\selectfont\songti \textbf{硕\ 士\ 学\ 位\ 论\ 文}}\\
+        \vspace{3pt}
+        {\zihao{4}\selectfont{\songti (学术学位研究生)}}\\
     \end{center}
-    \vspace*{3\baselineskip}
+    \vspace{66pt}
+    \begin{center}
+        {\zihao{2}{\songti \textbf{基于图像分割的细粒度变形表格结构识别}}}
+    \end{center}
+    \vspace{31.5pt}
     \begin{center}
     \begin{table}[!htbp]
     \centering
-        \begin{tabular}{c @{\hspace{2cm}} c rc}
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学号:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2304081200008}}} \\
+        \begin{tabular}{c @{\hspace{1cm}} c rc}
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 硕士研究生:}}&{\makebox[4cm][l]{\zihao{3}\selectfont { }}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 硕士研究生:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{刘龙}}} \\
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 导师:}}&{\makebox[4cm][l]{\zihao{3}\selectfont{ }}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 指导教师:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{杨词慧副教授}}} \\
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 申请学位级别:}}& {\makebox[4cm][l]{\zihao{3}\selectfont{ }}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 学院:}}&{\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{信息工程学院}}} \\
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 学科、专业:}}&{\makebox[4cm][l]{\zihao{3}\selectfont {计算机科学与技术}}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 专业:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机科学与技术}}} \\
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 所在单位:}}& {\makebox[4cm][l]{\zihao{3}\selectfont { }}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 研究方向:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{计算机视觉}}} \\
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 答辩日期:}}& {\makebox[4cm][l]{\zihao{3}\selectfont { }}} \\
             \\[1pt]
-            \Large \makebox[3cm][s]{\fontsize{15pt}{15pt}\selectfont \textbf{\songti 日期:}}& {\makebox[5cm][l]{\fontsize{15pt}{15pt}\selectfont \textbf{2024年12月}}}
+            \Large \makebox[3.5cm][s]{\zihao{3}\selectfont \textbf{\songti 授予学位单位:}}& {\makebox[4cm][l]{\zihao{3}\selectfont { }}}
         \end{tabular}
     \end{table} 
     \end{center}
+\restoregeometry %恢复之前的页面格式
+}
 
-\begin{center}
-    \vspace*{\baselineskip}
-    {\Large \fangsong 南昌航空大学研究生院制}
-\end{center}
-% \vspace{-2\baselineskip} % 减少一定的空间
-\restoregeometry
+{
+\thispagestyle{empty}
+\centering
+\vspace*{12pt} % 顶部留白
+{\LARGE\bfseries Research \\[0.3em]
+Based on Transformer and CNN\par}
+
+\vspace{24pt} % 标题与副标题间距
+
+% 副标题部分
+{\large A Dissertation\par}
+\vspace{12pt}
+{\large Submitted for the Degree of Master\par}
+\vspace{12pt}
+{\large On the Computer Science and Technology\par}
+
+\vspace{48pt} % 中间留白
+
+% 作者信息
+{\Large\bfseries By Long Liu\par}
+\vspace{12pt}
+{\large Under the Supervision of\par}
+\vspace{12pt}
+{\Large\bfseries A.Prof. Cihui Yang\par}
+
+% \vfill % 自动填充剩余空间
+\vspace{58.5pt}
+
+% 底部信息
+{\large School of Information Engineering\par}
+\vspace{12pt}
+{\large Nanchang Hangkong University, Nanchang, China\par}
+\vspace{12pt}
+{\large May, 2026\par}
+}
+
+{
+
+    \newpage
+    \pagestyle{empty} % 设置页面样式为 plain，即只有页码，没有页眉
+    \thispagestyle{plain} % 当前页也使用 plain 样式，即只有页码，没有页眉
+    \pagenumbering{Roman} % 使用大写罗马数字作为页码格式
+    % \rhead{摘要}
+    \begin{center}
+        \phantomsection % 手动插入锚点
+        \section*{{摘要}}
+        \addcontentsline{toc}{section}{摘要} % 将“摘要”添加到目录
+    \end{center}
+    
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline %另起一段
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline
+    \medskip\textbf{\songti 关键词：}XXX;XXX;XXX
+
+    \newpage
+    \thispagestyle{plain}
+    % \rhead{Abstract}
+    \begin{center}
+        \phantomsection % 手动插入锚点
+        \section*{{Abstract}}
+        \addcontentsline{toc}{section}{Abstract} % 将“Abstract”添加到目录
+    \end{center}
+
+    
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline
+    \medskip\textbf{Keywords:}XXX;XXX;XXX
 }
 
 \makeatother
@@ -276,37 +345,16 @@
 \pagestyle{fancy} % 从这个地方一下全遵循自定义页眉
 \newpage
 % 添加目录
-% 设置目录的独立页码
-\pagenumbering{Roman} % 使用小写罗马数字作为目录页码
-\setcounter{page}{1} % 重置页码计数器
+% \pagenumbering{Roman} % 使用小写罗马数字作为目录页码
+% \setcounter{page}{1} % 重置页码计数器
 \begin{flushleft}
+    \phantomsection % 手动插入锚点
     \centering\tableofcontents
+    \addcontentsline{toc}{section}{目录} % 将“目录”添加到目录
 \end{flushleft}
 
 
 \clearpage
-
-% {
-%     \pagenumbering{Roman}
-%     \thispagestyle{plain}
-%     % \maketitle
-%     \rhead{Abstract}
-%     \begin{center}
-%         \section*{\centerline{Abstract}}
-%     \end{center}
-
-%     This paper mainly studies the problem of urban air quality, and establishes a model based on \textbf{typical correlation analysis} and neural network algorithm to predict air quality,This article measures the air quality specifically refers to the occurrence of haze.
-
-%     In this paper, After data acquisition, statistical software SPSS26 was used for typical correlation analysis, and three typical correlation coefficients were selected and standardized from the correlation coefficient and typical correlation degree. At the same time, the typical load is introduced to describe the index of each typical correlation coefficient reaction. Finally, the contribution of the typical variables to the total variance of the sample is described. The proportion of variance explained by the three typical variables is 0.365, 0.203 and 0.031, respectively.
-
-%     Considering that the forecast is not stable and needs to be updated with time, this paper does not consider meteorological conditions and seasonal factors with a long time span. In terms of method, this paper considers to build \textbf{BP neural network algorithm} with matlab, and adopts \textbf{Levenberg-Marquardt training algorithm} to build model prediction. Finally, when the fit degree allows, the model can indirectly obtain the corresponding PM2.5 through weather forecast data The predicted value can be combined with the haze level warning to predict the air quality.
-%     \newline 
-%     \vspace*{0.3\baselineskip}
-%     \medskip\textbf{【Keywords】}typical correlation analysis;BP neural network algorithm;Levenberg-Marquardt training algorithm
-%     \clearpage
-% }
-% \pagenumbering{arabic}
-
 \pagenumbering{arabic} % 切换到阿拉伯数字作为正文页码
 \setcounter{page}{1} % 重置页码计数器
 % 通常来说，你在下面章节填充内容即可！
@@ -484,9 +532,12 @@
 \section{研究计划进度}
 
 % 参考文献部分
-\section{参考文献}
-\renewcommand{\section}[2]{} 
-\begingroup
+\clearpage
+{
+\phantomsection % 手动插入锚点
+\section*{参考文献}
+\addcontentsline{toc}{section}{参考文献}
+\vspace{-3\baselineskip} % 减少段后距离
 % 设置参考文献的格式
 \fontsize{10.5pt}{12pt}\selectfont  % 设置五号字体（10.5pt）
 \renewcommand{\baselinestretch}{1.0}  % 单倍行距
@@ -498,100 +549,22 @@
     \bibitem{b2} Subramani N, Matton A, Greaves M, and Lam A (2020). A Survey of Deep Learning Approaches for OCR and Document Understanding[R/OL]. ArXiv, abs/2011.13534.
     % 传统算法 + 表格结构识别
     \bibitem{b3}司明. 表格识别的研究[D]. 西安科技大学, 2009.
-    % 深度学习 + 表格结构是识别
-    \bibitem{b4} Gilani A, R.Qasim S, Malik I, et al, Table detection using deep learning[C], in: 2017 14th IAPR international conference on document analysis and recognition (ICDAR), Vol. 1, IEEE, 2017, pp. 771–776.
-    % 单元格回归结构的部分
-    \bibitem{bcell} Jiang J, Simsek M, Kantarci B, and Khan S (2021). TabCellNet: Deep learning-based tabular cell structure detection[J]. Neurocomputing, 440, 12-23.
-    % 研究现状、方法
-    \bibitem{m1} Pyreddy P, Croft W B. TINTI: A System for Retrieval in Text Tables TITLE2:[R]. USA: University of Massachusetts, 1997.
-    \bibitem{m2} Wangt Y, Phillipst I T, Haralick R. Automatic table ground truth generation and a background-analysis-based table structure extraction method[C]//Proceedings of Sixth International Conference on Document Analysis and Recognition. 2001: 528-532. https://ieeexplore.ieee.org/document/953845. doi: 10.1109/ICDAR.2001.953845.
-
-    \bibitem{m3} Kieninger T, Dengel A. The T-Recs Table Recognition and
-    Analysis System[C]//vol 1655. 1998: 255-269. doi: 10.1007/3-540-48172-9\_21.
-    \bibitem{m4} Cesarini F, Marinai S, Sarti L, et al. Trainable table location
-    in document images[C]//2002 International Conference on Pattern Recognition: 2002: 236-240 vol3.
-    \bibitem{m5} Fan M, Kim D S. Detecting Table Region in PDF
-    Documents Using Distant Supervision[M]. arXiv, 2015. http://arxiv.org/abs/1506.08891. doi: 10.48550/arXiv.1506.08891.
-    \bibitem{m6} Wang Y, Hu J. A machine learning based approach for table detection on the web[C]//Proceedings of the 11th
-    international conference on World Wide Web. New York, NY, USA: Association for Computing Machinery, 2002: 242-250. https://dl.acm.org/doi/10.1145/511446.511478. doi: 10.1145/511446.511478.
-    \bibitem{m21} Siddiqui S A, Fateh I A, Rizvi S T R, et al. DeepTabStR: Deep Learning based Table Structure Recognition[C]//2019
-    International Conference on Document Analysis and
-    Recognition (ICDAR). 2019: 
-    \bibitem{m22} Long R, Wang W, Xue N, et al. Parsing Table Structures in
-    the Wild[M]. arXiv, 2021. http://arxiv.org/abs/2109.02199. doi: 10.48550/arXiv.2109.02199.
-    \bibitem{m7} Table Recognition in Spreadsheets via a Graph Representation | IEEE Conference Publication | IEEE Xplore[EB]. https://ieeexplore.ieee.org/document/8395185.
-    \bibitem{m8} Ahmed Nassar, Nikolaos Livathinos, et al. TableFormer: Table Structure Understanding with Transformers[C].Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022, pp. 4614-4623.
-    \bibitem{m9} Xue W, Yu B, Wang W, et al. TGRNet: A Table Graph Reconstruction Network for Table Structure Recognition[C]//Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021: 
-    \bibitem{m10} Deng Y, Rosenberg D, Mann G. Challenges in End-to-End Neural Scientific Table Recognition[C]//2019 International Conference on Document Analysis and Recognition (ICDAR). 2019: 894-901. https://ieeexplore.ieee.org/document/8978078. doi: 10.1109/ICDAR.2019.00148.
-    \bibitem{m11} Lee E, Kwon J, Yang H, et al. Table Structure Recognition Based on Grid Shape Graph[C]//2022 Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPAASC). 2022: 1868-1873. https://ieeexplore.ieee.org/document/9980172. doi: 10.23919/APSIPAASC55919.2022.9980172.
-    \bibitem{m12} Schreiber S, Agne S, Wolf I, et al. DeepDeSRT: Deep
-    Learning for Detection and Structure Recognition of Tables
-    in Document Images[C]//2017 14th IAPR International
-    Conference on Document Analysis and Recognition
-    (ICDAR): vol01. 2017: 1162-1167.
-    \bibitem{m13} Agarwal M, Mondal A, Jawahar C V. CDeC-Net: Composite Deformable Cascade Network for Table Detection in Document Images[M]. arXiv, 2020. http://arxiv.org/abs/2008.10831. doi: 10.48550/arXiv.2008.10831. [80] Nazir D, Hashmi K A, Pagani A
-    \bibitem{m14} Xue W, Li Q, Tao D. ReS2TIM: Reconstruct Syntactic Structures from Table Images[C]//2019 International
-    Conference on Document Analysis and Recognition
-    (ICDAR). 2019: 749-755. https://ieeexplore.ieee.org/document/8978027. doi: 10.1109/ICDAR.2019.00125.
-    \bibitem{m15} Tensmeyer C, Morariu V I, Price B, et al. Deep Splitting and
-    Merging for Table Structure Decomposition[C]//2019
-    International Conference on Document Analysis and
-    Recognition (ICDAR). 2019: 114-121. https://ieeexplore.ieee.org/document/8977975. doi: 10.1109/ICDAR.2019.00027.
-    \bibitem{m16} Deng Y, Rosenberg D, Mann G. Challenges in End-to-End Neural Scientific Table Recognition[C]//2019 International Conference on Document Analysis and Recognition (ICDAR). 2019: 894-901. https://ieeexplore.ieee.org/document/8978078. doi: 10.1109/ICDAR.2019.00148.
-    \bibitem{m17} Paliwal S, D V, Rahul R, et al. TableNet: Deep Learning model for end-to-end Table detection and Tabular data
-    extraction from Scanned Document Images[M]. arXiv, 2020. http://arxiv.org/abs/2001.01469. doi: 10.48550/arXiv.2001.01469.
-    \bibitem{m18} Prasad D, Gadpal A, Kapadni K, et al. CascadeTabNet: An approach for end to end table detection and structure recognition from image-based documents[M]. arXiv, 2020. http://arxiv.org/abs/2004.12629. doi: 10.48550/arXiv.2004.12629.
-    \bibitem{m19} Nazir D, Hashmi K A, Pagani A, et al. HybridTabNet: Towards Better Table Detection in Scanned Document Images[J]. Applied Sciences, 2021, 11(18): 8396. doi: 10.3390/app11188396.
-    \bibitem{m20} Hashmi K A, Pagani A, Liwicki M, et al. CasTabDetectoRS: Cascade Network for Table Detection in Document Images with Recursive Feature Pyramid and Switchable Atrous Convolution[J]. Journal of Imaging, 2021, 7(10): 214. doi: 10.3390/jimaging7100214.
-    \bibitem{m23} Xing H, Gao F, Long R, et al. LORE: Logical Location Regression Network for Table Structure Recognition[M]. arXiv, 2023. http://arxiv.org/abs/2303.03730. doi: 10.48550/arXiv.2303.03730.
-    \bibitem{m24} Chandran S, Kasturi R. Structural recognition of tabulated data[C]//Proceedings of 2nd International Conference on Document Analysis and Recognition (ICDAR ’93). 1993: 516-519. https://ieeexplore.ieee.org/document/395683. doi: 10.1109/ICDAR.1993.395683.
-    \bibitem{m25}  Göbel M, Hassan T, Oro E, et al. ICDAR 2013 Table Competition[C]//2013 12th International Conference on Document Analysis and Recognition. 2013: 1449-1453.
-    \bibitem{m26} Oro E, Ruffolo M. PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents[C]//2009 10th International Conference on Document Analysis and Recognition. 2009: 906-910. https://ieeexplore.ieee.org/document/5277546/footnotes\#footnotes.
-
-
-
-    % \bibitem{data1} Fang J, Tao X, Tang Z, et al. Dataset, Ground-Truth and
-    % Performance Metrics for Table Detection Evaluation[J]. Proceedings - 10th IAPR International Workshop on Document Analysis Systems, DAS 2012, 2012. doi: 10.1109/DAS.2012.29.
-    % \bibitem{data2} Göbel M, Hassan T, Oro E, et al. ICDAR 2013 Table Competition[C]//2013 12th International Conference on Document Analysis and Recognition. 2013: 1449-1453.
-    % \bibitem{data3} Gao L, Yi X, Jiang Z, et al. ICDAR2017 Competition on Page Object Detection[C]//2017 14th IAPR International
-    % Conference on Document Analysis and Recognition
-    % (ICDAR): vol 01. 2017: 1417-1422.
-    % \bibitem{data4} Gao L, Huang Y, Déjean H, et al. ICDAR 2019 Competition
-    % on Table Detection and Recognition (cTDaR)[C]//2019
-    % International Conference on Document Analysis and
-    % Recognition (ICDAR). 2019: 1510-1515. https://ieeexplore.ieee.org/document/8978120. doi: 10.1109/ICDAR.2019.00243.
-    % \bibitem{data5} N. Siegel, N. Lourie, R. Power, et al. Extracting scientific figures with distantly supervised neural networks, in: Proceedings of the 18th ACM/IEEE on joint conference on
-    % digital libraries, 2018, pp. 223–232.
-    % \bibitem{data6} Zhong X, ShafieiBavani E, Yepes A J. Image-based table
-    % recognition: data, model, and evaluation[M]. arXiv, 2020. http://arxiv.org/abs/1911.10683. doi: 10.48550/arXiv.1911.10683.
-    % \bibitem{data7} Li M, Cui L, Huang S, et al. TableBank: A Benchmark
-    % Dataset for Table Detection and Recognition[EB]//arXiv.org. (2019-03-05). https://arxiv.org/abs/1903.01949v2.
-    % \bibitem{data8} Chi Z, Huang H, Xu H D, et al. Complicated Table Structure Recognition[M]. arXiv, 2019. http://arxiv.org/abs/1908.04729. doi: 10.48550/arXiv.1908.04729.
-    % \bibitem{data9} Zheng X, Burdick D, Popa L, et al. Global Table Extractor
-    % (GTE): A Framework for Joint Table Identification and Cell
-    % Structure Recognition Using Visual Context[M]. arXiv,2020. http://arxiv.org/abs/2005.00589. doi: 10.48550/arXiv.2005.00589.
-    % \bibitem{data10} Long, R, Wang, W, Xue, N, Gao, F, Yang, Z, Wang, Y, Xia, G (2021). Parsing Table Structures in the Wild. 2021 IEEE/CVF International Conference on Computer Vision (ICCV), 924-932.
-    % \bibitem{data11} Smock B, Pesala R, Abraham R. PubTables-1M: Towards comprehensive table extraction from unstructured
-    % documents[M]. arXiv, 2021. http://arxiv.org/abs/2110.00061. doi: 10.48550/arXiv.2110.00061
-    % \bibitem{data12} Zhong X, ShafieiBavani E, Yepes A J. Image-based table
-    % recognition: data, model, and evaluation[M]. arXiv, 2020. http://arxiv.org/abs/1911.10683. doi: 10.48550/arXiv.1911.10683.
-    % \bibitem{data13} Ly N T, Takasu A, Nguyen P, et al. Rethinking Image-based
-    % Table Recognition Using Weakly Supervised
-    % Methods[C]//Proceedings of the 12th International
-    % Conference on Pattern Recognition Applications and
-    % Methods. 2023: 872-880. http://arxiv.org/abs/2303.07641. doi: 10.5220/0011682600003411.
-    
-    % \bibitem{b6} Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
-    % \bibitem{b7} Bing S ,Tao G ,Hongbo S , et al. Quality-related process monitoring scheme based on neighborhood embedding canonical correlation analysis model[J]. Journal of the Taiwan Institute of Chemical Engineers,2023,152.
-    % \bibitem{b8} Minqiang Y ,Yushan W ,Yongfeng T , et al. Trial Selection Tensor Canonical Correlation Analysis (TSTCCA) for Depression Recognition with Facial Expression and Pupil Diameter.[J]. IEEE journal of biomedical and health informatics,2023,PP.
-    % \bibitem{b9} Lijia L ,Weida W ,Shiyi B , et al. Robust and sparse canonical correlation analysis for fault detection and diagnosis using training data with outliers[J]. Expert Systems With Applications,2024,236.
-    % \bibitem{b10} Jiali Y . Application of improved BP neural network model in bank financial accounting[J]. Intelligent Systems with Applications,2022,16.
 \end{thebibliography}
-\endgroup
+}
 
+\clearpage
+\phantomsection % 手动插入锚点
+\section*{攻读硕士期间发表论文及参加科研情况}
+\addcontentsline{toc}{section}{攻读硕士期间发表论文及参加科研情况}
+这里写科研成果
+
+\clearpage
+\phantomsection % 手动插入锚点
+\section*{致谢}
+\addcontentsline{toc}{section}{致谢}
+这里写致谢
 
 {
-    
 \newpage
 \thispagestyle{empty}
 \newgeometry{paperwidth=21cm, paperheight=29.7cm, left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}

@@ -5,3 +5,9 @@ paper/*
 
 # 只关注文件夹下的 .tex 文件
 !paper/*.tex
+
+# 不忽略 paper 文件夹下的 sections 目录
+!paper/sections/
+
+# 确保 sections 目录下的内容不被忽略
+!paper/sections/**
