@@ -7,6 +7,6 @@ paper/*
 !paper/*.tex
 
 # 不忽略 paper 文件夹下的 sections 目录
-!paper/sections/
+!paper/sections/*.tex
 
 !paper/ref/
