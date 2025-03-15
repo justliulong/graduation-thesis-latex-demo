@@ -9,5 +9,4 @@ paper/*
 # 不忽略 paper 文件夹下的 sections 目录
 !paper/sections/
 
-# 确保 sections 目录下的内容不被忽略
-!paper/sections/**
+!paper/ref/
