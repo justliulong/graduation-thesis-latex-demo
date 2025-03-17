@@ -9,4 +9,19 @@ paper/*
 # 不忽略 paper 文件夹下的 sections 目录
 !paper/sections/*.tex
 
+paper/sections/*.pdf
+paper/sections/*.bbl
+paper/sections/*.aux
+paper/sections/*.log
+paper/sections/*.toc
+paper/sections/*.fls
+paper/sections/*.synctex.gz
+paper/sections/*.synctex(busy)
+paper/sections/*.synctex.lock
+paper/sections/*.synctex.gz(busy)
+paper/sections/*.synctex(busy.lock)
+paper/sections/*.synctex(busy.lock(busy))
+paper/sections/*.synctex(busy.lock(busy.lock))
+paper/sections/*.synctex(busy.lock(busy.lock(busy)))
+
 !paper/ref/

@@ -1,7 +1,5 @@
 {
   // Latex workshop
-  "latex-workshop.formatting.latex": "latexindent",
-  "latex-workshop.formatting.latexindent.path": "/usr/bin/latexindent",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -40,9 +38,25 @@
       "args": [
         "%DOCFILE%"
       ]
-    }
+    },
+    {
+      "name": "xelatex-with-bib-fallback",
+      "command": "bash",
+      "args": [
+        "-c",
+        // 尝试完整流程（xelatex -> bibtex -> xelatex*2），若 bibtex 失败则跳过后续处理
+        "/usr/bin/xelatex -synctex=1 -interaction=nonstopmode -file-line-error '%DOCFILE%' && (/usr/bin/bibtex '%DOCFILE%' || echo '[Warn] BibTeX failed, continuing...') && /usr/bin/xelatex -synctex=1 -interaction=nonstopmode -file-line-error '%DOCFILE%' && /usr/bin/xelatex -synctex=1 -interaction=nonstopmode -file-line-error '%DOCFILE%'"
+      ]
+    },
   ],
   "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex->trybib->xelatex*2",
+      "tools": [
+        "xelatex-with-bib-fallback" // 优先尝试完整流程
+        // "xelatex" // 完全失败后生成不含参考文献的PDF
+      ]
+    },
     {
       "name": "xelatex -> bibtex -> xelatex*2",
       "tools": [
@@ -64,15 +78,15 @@
         "latexmk"
       ]
     },
-    // {
-    //   "name": "pdflatex -> bibtex -> pdflatex*2",
-    //   "tools": [
-    //     "pdflatex",
-    //     "bibtex",
-    //     "pdflatex",
-    //     "pdflatex"
-    //   ]
-    // }
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    }
   ],
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.autoClean.run": "onBuilt", //注意结尾是 t 不是 d
