@@ -1,0 +1,44 @@
+\documentclass[../article.tex]{subfiles} % 继承主文档配置
+
+\begin{document}
+{
+
+    \newpage
+    \pagestyle{empty} % 设置页面样式为 plain，即只有页码，没有页眉
+    \thispagestyle{plain} % 当前页也使用 plain 样式，即只有页码，没有页眉
+    \pagenumbering{Roman} % 使用大写罗马数字作为页码格式
+    % \rhead{摘要}
+    \begin{center}
+        \phantomsection % 手动插入锚点
+        \section*{{摘要}}
+        \addcontentsline{toc}{section}{摘要} % 将“摘要”添加到目录
+    \end{center}
+    
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline %另起一段
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline
+    \medskip\textbf{\songti 关键词：}XXX;XXX;XXX
+
+    \newpage
+    \thispagestyle{plain}
+    % \rhead{Abstract}
+    \begin{center}
+        \phantomsection % 手动插入锚点
+        \section*{{Abstract}}
+        \addcontentsline{toc}{section}{Abstract} % 将“Abstract”添加到目录
+    \end{center}
+
+    
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    \newline
+    \medskip\textbf{Keywords:}XXX;XXX;XXX
+}
+
+\end{document}

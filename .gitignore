@@ -1,7 +1,18 @@
 # 忽略 paper 文件夹下的除了 .tex 文件的所有
 # ./paper/(!*.tex)
 
-paper/*
+paper/*.bbl
+paper/.aux
+paper/*.log
+paper/*.toc
+paper/*.fls
+paper/*.synctex.gz
+paper/*.synctex(busy)
+paper/*.synctex.lock
+paper/*.synctex.gz(busy)
+paper/*.synctex(busy.lock)
+paper/*.synctex(busy.lock(busy))
+paper/*.synctex(busy.lock(busy.lock))
 
 # 只关注文件夹下的 .tex 文件
 !paper/*.tex
