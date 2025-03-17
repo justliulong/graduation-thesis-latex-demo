@@ -16,7 +16,6 @@
 % ========== 智能页眉配置 ==========
 \pagestyle{fancy}
 \fancyhf{}
-
 % ========== 自定义标记系统 ==========
 \renewcommand{\sectionmark}[1]{%
     \markboth{第 \arabic{section} 章\quad #1}{} % 控制 leftmark 内容
@@ -30,18 +29,11 @@
     \hrule width\headwidth height 0.4pt % 细线
 }
 
+
 % 左页眉固定内容
 \fancyhead[L]{\normalfont\small 南昌航空大学硕士学位论文}
-
-
-
 % 右页眉智能显示
 \fancyhead[R]{\normalfont\small \leftmark }
-
-% ========== 应用范围控制 ==========
-\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrule}{}}
-\AtBeginDocument{\pagestyle{fancy}} % 强制应用样式
-
 
 \fancyfoot[C]{\thepage} % 将页码放置在页脚中央
 
@@ -65,6 +57,21 @@
   \bfseries 目录 % 加粗
   \vspace{24pt} % 段前 24 磅
 }
+
+\fancypagestyle{mulu}
+  {
+    \fancyhf{}
+    % 左页眉固定内容
+    \fancyhead[L]{\normalfont\small 南昌航空大学硕士学位论文}
+    % 右页眉智能显示
+    \fancyhead[R]{\normalfont\small 目录 }
+    \renewcommand{\headrule}{%
+    \vspace{1pt}
+    \hrule width\headwidth height 1.2pt % 粗线
+    \vspace{1.5pt}
+    \hrule width\headwidth height 0.4pt % 细线
+}
+  }
 
 % % 设置目录中章节标题的格式
 % \titlecontents{section}
@@ -176,7 +183,6 @@
 % \renewcommand*{\Authand}{,}
 % \renewcommand*{\Authands}{,}
 
-\geometry{paperwidth=21cm, paperheight=29.7cm,left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}
 
 % 设置中文字体为宋体
 \setCJKmainfont{SimSun}
@@ -202,6 +208,7 @@
 \usepackage{cite}
 
 \bibliographystyle{ref/gbt7714-numerical}
+\geometry{paperwidth=21cm, paperheight=29.7cm,left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}
 
 \begin{document}
 % \begin{sloppypar}
@@ -216,16 +223,17 @@
 
 
 
-\pagestyle{fancy} % 从这个地方一下全遵循自定义页眉
+% \pagestyle{fancy} % 从这个地方一下全遵循自定义页眉
 \newpage
-% 添加目录
-% \pagenumbering{Roman} % 使用小写罗马数字作为目录页码
-% \setcounter{page}{1} % 重置页码计数器
-\begin{flushleft}
-    \phantomsection % 手动插入锚点
-    \centering\tableofcontents
-    \addcontentsline{toc}{section}{目录} % 将“目录”添加到目录
-\end{flushleft}
+{
+    \begin{flushleft}
+        \phantomsection % 手动插入锚点
+        \centering\tableofcontents
+        \addcontentsline{toc}{section}{目录} % 将“目录”添加到目录
+    \end{flushleft}
+    \thispagestyle{mulu}
+    \pagestyle{mulu}     % 确保后续页面也保持 fancy 样式
+}
 
 
 \clearpage
