@@ -58,20 +58,20 @@
   \vspace{24pt} % 段前 24 磅
 }
 
-\fancypagestyle{mulu}
-  {
+\fancypagestyle{mulu}{
     \fancyhf{}
     % 左页眉固定内容
     \fancyhead[L]{\normalfont\small 南昌航空大学硕士学位论文}
     % 右页眉智能显示
     \fancyhead[R]{\normalfont\small 目录 }
+    \fancyfoot[C]{\thepage} % 将页码放置在页脚中央
     \renewcommand{\headrule}{%
     \vspace{1pt}
     \hrule width\headwidth height 1.2pt % 粗线
     \vspace{1.5pt}
     \hrule width\headwidth height 0.4pt % 细线
-}
   }
+}
 
 % % 设置目录中章节标题的格式
 % \titlecontents{section}
@@ -232,7 +232,7 @@
         \addcontentsline{toc}{section}{目录} % 将“目录”添加到目录
     \end{flushleft}
     \thispagestyle{mulu}
-    \pagestyle{mulu}     % 确保后续页面也保持 fancy 样式
+    \pagestyle{mulu}     % 确保后续页面也保持 mulu 样式
 }
 
 
