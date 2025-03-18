@@ -13,7 +13,7 @@
 \renewcommand{\headrulewidth}{0pt} % 移除页眉横线
 % \sectionfont{\centering} % 居中显示标题
 
-% ========== 智能页眉配置 ==========
+% ========== 页眉配置 ==========
 \pagestyle{fancy}
 \fancyhf{}
 % ========== 自定义标记系统 ==========
@@ -73,29 +73,20 @@
   }
 }
 
-% % 设置目录中章节标题的格式
-% \titlecontents{section}
-%   [0em] % 左边距
-%   {\bfseries \songti \fontsize{11pt}{13pt}\selectfont} % 标题格式
-%   {\contentslabel{0.9em}{、}} % 标签格式（序号和顿号）
-%   {}
-%   {\titlerule*{.}\contentspage}
 
-% % 设置目录中二级标题格式
-% \titleformat{\subsection}
-%   {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
-%   {\thesubsection} % 编号
-%   {0em} % 编号与标题之间的水平间距
-%   {} % 标题内容前的附加内容
-%   [\vspace{0pt}] % 段后 0 磅
+% 为section和subsection添加引导线
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{0.7} % 默认值为1，此处设为0.5
 
-% % 设置目录中三级标题格式
-% \titleformat{\subsubsection}
-%   {\songti \fontsize{12pt}{18pt}\selectfont} % 宋体、小四号
-%   {\thesubsubsection} % 编号
-%   {0em} % 编号与标题之间的水平间距
-%   {} % 标题内容前的附加内容
-%   [\vspace{0pt}] % 段后  0 磅
+% 取消目录中的加粗
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}      % section页码
+\renewcommand{\cftsubsecfont}{\normalfont}
+
+% 调整行间距
+\setlength{\cftbeforesecskip}{0.5em}     % section间距
+\setlength{\cftbeforesubsecskip}{0.3em}  % subsection间距
 
 
 \CTEXsetup[name={第,章},number={{\arabic{section}}}]{section}
@@ -107,9 +98,6 @@
 
 % 自定义无编号章节格式（摘要/参考文献/致谢）
 \titleformat{name=\section,numberless}[block]{\centering\bfseries\large}{}{0pt}{}
-
-% 禁用默认标题
-% \renewcommand{\refname}
 
 % 设置 subsection 格式
 \titleformat{\subsection}
@@ -127,9 +115,6 @@
   {} % 标题内容前的附加内容
 %   [\vspace{0.5em}] % 标题后的垂直间距
 
-% \CTEXsetup[name={\heiti \fontsize{14.4pt}{21pt}\selectfont},number={}]{section}
-
-% \CTEXsetup[format={\Large\bfseries}]{section}
 
 \setlength{\baselineskip}{20pt}  % 正文20磅行距
 
@@ -178,11 +163,6 @@
 % 设置表格图注为中文
 \captionsetup[table]{name=表}
 
-% 作者格式
-% \renewcommand*{\Authsep}{,}
-% \renewcommand*{\Authand}{,}
-% \renewcommand*{\Authands}{,}
-
 
 % 设置中文字体为宋体
 \setCJKmainfont{SimSun}
@@ -208,6 +188,10 @@
 \usepackage{cite}
 
 \bibliographystyle{ref/gbt7714-numerical}
+% 禁用默认标题
+% \renewcommand{\refname}
+
+
 \geometry{paperwidth=21cm, paperheight=29.7cm,left=3cm,right=3cm,top=2.5cm, bottom=2.5cm}
 
 \begin{document}
